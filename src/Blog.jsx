@@ -44,7 +44,7 @@ function Blog () {
 
     return(
         <div>
-            <h1>Welcome To Blog</h1>
+            <h1>Create A Blog</h1>
             <input type="text" placeholder="Type a title" onChange={handleTitleChange} value={title}/>
             <br />
             <br />
