@@ -1,0 +1,144 @@
+:root {
+    --dark-blue: #233453;
+    --light-blue: #297099;
+}
+
+.home .lap-img {
+        width: 400px;
+        border-radius: 50%;
+        box-shadow: -10px 10px 20px rgba(0, 0, 0, 0.2);
+        justify-self: center;
+        -webkit-mask-image: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(0,0,0,0.5) 60%, rgba(0,0,0,0) 100%);
+        mask-image: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(0,0,0,0.5) 60%, rgba(0,0,0,0) 100%);
+        -webkit-mask-composite: source-over;
+        mask-composite: exclude;
+        animation: modernClear 2s ease-in-out infinite alternate;
+        will-change: transform, filter, box-shadow;
+}
+
+@keyframes modernClear {
+    from {
+        filter: blur(6px) saturate(0.95) contrast(0.95);
+        transform: scale(1);
+        box-shadow: -10px 10px 20px rgba(0,0,0,0.18);
+    }
+    to {
+        filter: blur(0px) saturate(1.05) contrast(1.05);
+        transform: scale(1.03);
+        box-shadow: -14px 14px 30px rgba(0,0,0,0.25);
+    }
+}
+
+@-webkit-keyframes modernClear {
+    from {
+        -webkit-filter: blur(6px) saturate(0.95) contrast(0.95);
+        transform: scale(1);
+        box-shadow: -10px 10px 20px rgba(0,0,0,0.18);
+    }
+    to {
+        -webkit-filter: blur(0px) saturate(1.05) contrast(1.05);
+        transform: scale(1.03);
+        box-shadow: -14px 14px 30px rgba(0,0,0,0.25);
+    }
+}
+
+.home .grid-div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 90px;
+}
+
+.home .intro {
+    justify-self: center;
+    padding-top: 40px;
+}
+
+.home .intro h1 {
+    color: var(--dark-blue);
+    text-align: center;
+    font-size: 50px;
+    margin-bottom: 40px;
+}
+
+.home .intro p {
+    color: var(--dark-blue);
+    text-align: center;
+    font-family: monospace;
+    font-size: 18px;
+    line-height: 30px;
+    font-weight: bold;
+}
+
+.home .link-div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 30px;
+}
+
+.home .create-blog {
+    text-decoration: none;
+    color: white;
+    background-color: rgb(80, 43, 182);
+    width: fit-content;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: all .2s linear;
+}
+
+.home .create-blog:hover {
+    background-color: rgb(118, 82, 218);
+}
+
+.home .view-blogs {
+    text-decoration: none;
+    color: rgb(80, 43, 182);
+    background-color: white;
+    width: fit-content;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: solid rgb(80, 43, 182) 2px;
+    transition: all .2s linear;
+}
+
+.home .view-blogs:hover {
+    background-color: rgb(99, 57, 212);
+    color: white;
+}
+
+.home .cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.home .card {
+    justify-self: center;
+    display: flex;
+    background-color: white;
+    padding: 35px;
+    box-shadow: -1px 1px 5px black;
+    border-radius: 10px;
+    transition: all linear .4s;
+    cursor: pointer;
+}
+
+
+.home .emoji {
+    font-size: 70px;
+    margin-top: -20px;
+}
+
+.home h3 {
+    color: var(--dark-blue);
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.home .explain {
+    font-family: monospace;
+    color: var(--dark-blue);
+    font-weight: bold;
+    line-height: 20px;
+    font-size: 16px;
+}
