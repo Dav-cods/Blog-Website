@@ -154,3 +154,53 @@
         row-gap: 40px;
     }
 }
+
+@media (max-width: 480px) {
+    .home .lap-img {
+        width: 200px;
+    }
+
+    .home .intro h1 {
+        font-size: 32px;
+        margin-bottom: 20px;
+    }
+
+    .home .intro p {
+        font-size: 14px;
+        line-height: 24px;
+    }
+
+    .home .link-div {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        margin-top: 20px;
+    }
+
+    .home .create-blog,
+    .home .view-blogs {
+        width: 100%;
+        text-align: center;
+    }
+
+    .home .card {
+        padding: 20px;
+    }
+
+    .home .emoji {
+        font-size: 50px;
+    }
+
+    .home h3 {
+        font-size: 22px;
+        margin-bottom: 10px;
+    }
+
+    .home .explain {
+        font-size: 14px;
+        line-height: 18px;
+    }
+
+    .home .grid-div {
+        margin-bottom: 50px;
+    }
+}
