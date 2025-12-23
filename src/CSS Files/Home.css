@@ -156,6 +156,10 @@
 }
 
 @media (max-width: 480px) {
+    .home {
+        padding: 0 15px;
+    }
+
     .home .lap-img {
         width: 200px;
     }
@@ -184,6 +188,8 @@
 
     .home .card {
         padding: 20px;
+        margin: 0 auto;
+        max-width: 100%;
     }
 
     .home .emoji {
