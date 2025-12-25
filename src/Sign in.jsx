@@ -2,6 +2,7 @@ import { useState } from "react";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "./firebase";
 import { Link, useNavigate, useLocation } from "react-router-dom";
+import './CSS Files/Sign.css';
 
 function SignIn() {
 
@@ -46,15 +47,19 @@ function SignIn() {
     }
 
     return(
-        <div>
-            <h2>Sign In</h2>
-            <input type="email" value={email} placeholder="Email" onChange={handleEmailChange} />
-            <input type="password" value={password} placeholder="Password" onChange={handlePasswordChange} />
-            <button disabled={loading} onClick={signIn}>
-                {loading ? 'Signing In...' : 'Sign In'}
-            </button>
-            <p>{message}</p>
-            <p>Don't have an account? <Link to='/signup'>Sign Up</Link></p>
+        <div className="signIn-page">
+            <div className="sign-card">
+                <h2>Sign In</h2>
+                <div className="inputs">
+                    <input type="email" value={email} placeholder="Email" onChange={handleEmailChange} />
+                    <input type="password" value={password} placeholder="Password" onChange={handlePasswordChange} />
+                </div>
+                <button disabled={loading} onClick={signIn}>
+                    {loading ? 'Signing In...' : 'Sign In'}
+                </button>
+                <p className="message">{message}</p>
+                <p className="alternative">Don't have an account? <Link to='/signup'>Sign Up</Link></p>
+            </div>
         </div>
     )
 }

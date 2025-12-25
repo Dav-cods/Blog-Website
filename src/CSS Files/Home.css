@@ -185,6 +185,7 @@
     .home .view-blogs {
         width: 80%;
         text-align: center;
+        justify-self: center;
     }
 
     .home .card {

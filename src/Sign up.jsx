@@ -2,6 +2,7 @@ import { useState } from "react";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "./firebase";
 import { Link, useNavigate, useLocation } from "react-router-dom";
+import './CSS Files/Sign.css';
 
 function SignUp() {
 
@@ -31,6 +32,9 @@ function SignUp() {
 
         if (!email || !password || !confirm) {
             setMessage('All fields are required.');
+            setTimeout(() => {
+                setMessage('');
+            }, 2000)
             return;
         }
 
@@ -56,16 +60,20 @@ function SignUp() {
     }
 
     return(
-        <div>
-            <h2>Sign Up</h2>
-            <input type="email" onChange={handleEmailChange} value={email} placeholder="Email" />
-            <input type="password" onChange={handlePasswordChange} value={password} placeholder="Password" />
-            <input type="password" onChange={handleConfirmChange} value={confirm} placeholder="Confirm password" />
-            <button onClick={signUp} disabled={loading}>
-                {loading ? 'Creating Account...' : 'Create Account'}
-            </button>
-            <p>{message}</p>
-            <p>Already have an account? <Link to='/signin'>Sign In</Link></p>
+        <div className="signUp-page">
+            <div className="sign-card">
+                <h2>Sign Up</h2>
+                <div className="inputs">
+                    <input type="email" onChange={handleEmailChange} value={email} placeholder="Email" />
+                    <input type="password" onChange={handlePasswordChange} value={password} placeholder="Password" />
+                    <input type="password" onChange={handleConfirmChange} value={confirm} placeholder="Confirm password" />
+                </div>
+                <button onClick={signUp} disabled={loading}>
+                    {loading ? 'Creating Account...' : 'Create Account'}
+                </button>
+                <p className="message">{message}</p>
+                <p className="alternative">Already have an account? <Link to='/signin'>Sign In</Link></p>
+            </div>
         </div>
     )
 }
