@@ -1,0 +1,124 @@
+
+/* Blog Item — modern card style matching site theme */
+* {
+	box-sizing: border-box;
+}
+
+.Blog {
+	max-width: 800px;
+	margin: 22px auto;
+	background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(245,250,255,0.9));
+	padding: 26px 28px;
+	border-radius: 14px;
+	box-shadow: 0 6px 18px rgba(16,24,40,0.10);
+	border: 1px solid rgba(15,76,130,0.06);
+	transition: transform .18s ease, box-shadow .18s ease;
+	backdrop-filter: blur(6px);
+}
+
+.Blog:hover {
+	transform: translateY(-6px);
+	box-shadow: 0 14px 30px rgba(16,24,40,0.16);
+}
+
+.Blog h2 {
+	margin: 0 0 10px 0;
+	color: var(--dark-blue);
+	font-size: 1.45rem;
+	line-height: 1.15;
+	letter-spacing: -0.2px;
+}
+
+.Blog p {
+	color: #2f3b4a;
+	line-height: 1.65;
+	margin: 0 0 12px 0;
+	font-size: 1rem;
+}
+
+/* Meta (date/time) — second paragraph */
+.Blog p:nth-of-type(2) {
+	color: #5b6b85;
+	font-size: 0.9rem;
+	margin-top: 8px;
+}
+
+.Blog button {
+	display: inline-block;
+	background: linear-gradient(90deg, var(--dark-blue), rgba(43,87,138,0.92));
+	color: #fff;
+	border: none;
+	padding: 8px 14px;
+	border-radius: 999px;
+	cursor: pointer;
+	font-weight: 600;
+	transition: transform .12s ease, box-shadow .12s ease, opacity .12s ease;
+}
+
+.Blog button:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 10px 22px rgba(15,76,130,0.12);
+}
+
+.Blog hr {
+	height: 1px;
+	border: none;
+	margin-top: 16px;
+	background: linear-gradient(90deg, rgba(0,0,0,0.04), rgba(0,0,0,0.02));
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+	.Blog {
+		max-width: 92%;
+		padding: 20px 22px;
+		border-radius: 12px;
+	}
+
+	.Blog h2 {
+		font-size: 1.35rem;
+	}
+
+	.Blog p {
+		font-size: 0.98rem;
+	}
+
+	.Blog button {
+		padding: 7px 12px;
+		font-size: 0.95rem;
+	}
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+	.Blog {
+		max-width: 96%;
+		padding: 16px 14px;
+		box-shadow: 0 4px 12px rgba(16,24,40,0.08);
+		border: 1px solid rgba(15,76,130,0.04);
+	}
+
+	.Blog h2 {
+		font-size: 1.15rem;
+		margin-bottom: 8px;
+	}
+
+	.Blog p {
+		font-size: 0.95rem;
+		margin-bottom: 10px;
+	}
+
+	/* Make destructive action easier to tap on mobile */
+	.Blog button {
+		display: block;
+		width: 100%;
+		text-align: center;
+		padding: 10px 12px;
+		border-radius: 10px;
+		margin-top: 6px;
+	}
+
+	.Blog .message, .Blog .alternative {
+		font-size: 0.95rem;
+	}
+}

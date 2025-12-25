@@ -4,6 +4,7 @@ import { getDocs, collection, deleteDoc, doc, query, orderBy } from "firebase/fi
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Loading from "./Loading";
+import './CSS Files/View.css';
 
 function View() {
 
@@ -50,12 +51,8 @@ function View() {
     }
 
     return(
-        <div>
+        <div className="view-page">
             <h1>Here are your blogs!</h1>
-
-            <Link to='/'>Home</Link>
-            <br />
-            <Link to='/create'>Create blog</Link>
 
             <div className="screen">
                 {load && (

@@ -1,6 +1,8 @@
+import './CSS Files/Blog Item.css';
+
 function Item({blog, deleteBlog}) {
     return(
-        <div>
+        <div className="Blog">
             <h2>{blog.title}</h2>
             <p>{blog.content}</p>
             <p>Created on {blog.date} at {blog.time}</p>

@@ -1,0 +1,25 @@
+.view-page {
+    min-height: 100vh;
+    background: #f4f6fb;
+    padding: 30px 15px;
+}
+
+.view-page h1 {
+    text-align: center;
+    color: #233453;
+    margin-bottom: 30px;
+}
+
+.view-page .screen {
+    max-width: 900px;
+    margin: 0 auto;
+    display: grid;
+    gap: 20px;
+}
+
+.view-page .remark {
+    text-align: center;
+    color: #555;
+    font-weight: bold;
+    margin-top: 20px;
+}
