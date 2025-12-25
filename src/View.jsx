@@ -9,35 +9,39 @@ function View() {
 
     const [blogs, setBlogs] = useState([]);
     const [remark, setRemark] = useState("");
-    const [load, setLoad] = useState();
+    const [load, setLoad] = useState(false);
 
     useEffect(() => {
         showBlogs();
     }, []);
 
     async function showBlogs() {
-        setLoad(<Loading/>);
+        try {
+            setLoad(true);
 
-        const q = query(collection(db, 'blogs'), orderBy('createdAt', 'desc'));
-        const snapshot = await getDocs(q);
-        const data = snapshot.docs.map(doc => {
-            return {
-                id: doc.id,
-                title: doc.data().title,
-                content: doc.data().content,
-                time: doc.data().time,
-                date: doc.data().date
+            const q = query(collection(db, 'blogs'), orderBy('createdAt', 'desc'));
+            const snapshot = await getDocs(q);
+            const data = snapshot.docs.map(doc => {
+                return {
+                    id: doc.id,
+                    title: doc.data().title,
+                    content: doc.data().content,
+                    time: doc.data().time,
+                    date: doc.data().date
+                }
+            });
+            setBlogs(data);
+
+            if (data.length === 0) {
+                setRemark("No blogs available!");
+            } else {
+                setRemark("Here are the available blogs!");
             }
-        });
-        setBlogs(data);
-
-        if (data.length === 0) {
-            setRemark("No blogs available!");
-        } else {
-            setRemark("Here are the available blogs!");
+        } catch (err) {
+            setRemark(err.message);
+        } finally {
+            setLoad(false);
         }
-
-        setLoad();
     }
 
     async function deleteBlog(id) {
@@ -54,7 +58,9 @@ function View() {
             <Link to='/create'>Create blog</Link>
 
             <div className="screen">
-                {load}
+                {load && (
+                    <Loading/>
+                )}
                 {blogs.map(blog => (
                     <Item blog={blog} deleteBlog={deleteBlog} key={blog.id}/>
                 ))}
