@@ -35,7 +35,8 @@ function Mine() {
                     content: doc.data().content,
                     time: doc.data().time,
                     date: doc.data().date,
-                    userId: doc.data().userId
+                    userId: doc.data().userId,
+                    userEmail: doc.data().userEmail,
                 }
             });
             setBlogs(data);
