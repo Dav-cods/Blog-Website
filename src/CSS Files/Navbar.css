@@ -36,7 +36,7 @@
 
 .navbar .nav {
     display: grid;
-    grid-template-columns: 1.6fr 1fr 1fr;
+    grid-template-columns: 1.1fr 1fr 1fr;
     align-items: center;
     background-color: white;
     height: fit-content;

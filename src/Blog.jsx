@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { db } from "./firebase";
+import { auth } from "./firebase";
 import { Link } from "react-router-dom";
 import Loading from "./Loading";
 import { Uploaded } from "./Loading";
@@ -32,7 +33,9 @@ function Blog () {
                     content: content,
                     time: new Date().toLocaleTimeString(),
                     date: new Date().toLocaleDateString(),
-                    createdAt: serverTimestamp()
+                    createdAt: serverTimestamp(),
+                    userId: auth.currentUser.uid,
+                    userEmail: auth.currentUser.email
                 });
 
                 setLoad(false);

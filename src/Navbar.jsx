@@ -31,6 +31,9 @@ function Navbar() {
                     <li><Link to='/' className="links">Home</Link></li>
                     <li><Link to='/create' className="links">Create Blog</Link></li>
                     <li><Link to='/view' className="links">View blogs</Link></li>
+                    {auth.currentUser && (
+                        <li><Link to='/mine' className="links">My blogs</Link></li>
+                    )}
                 </ul>
 
                 {auth.currentUser && (

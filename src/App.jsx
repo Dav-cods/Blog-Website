@@ -7,6 +7,7 @@ import View from './View.jsx';
 import Navbar from './Navbar.jsx';
 import SignUp from './Sign up.jsx';
 import SignIn from './Sign in.jsx';
+import Mine from './Mine.jsx';
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
               <View/>
             </Protect>
           }/>
+          <Route path='/mine' element={<Mine/>}/>
           <Route path='/signup' element={<SignUp/>}/>
           <Route path='/signin' element={<SignIn/>}/>
         </Routes>
